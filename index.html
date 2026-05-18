@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin McCarthy — Senior Product Owner</title>
+  <meta name="description" content="Senior Product Owner who brings teams together around a shared vision and ships products people actually want." />
+  <meta property="og:title" content="Kevin McCarthy — Senior Product Owner" />
+  <meta property="og:description" content="Great products don't happen alone — I bring the right people together and keep them pointed at the right problem." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kevinmccarthy.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kevin McCarthy — Senior Product Owner" />
+  <meta name="twitter:description" content="Great products don't happen alone — I bring the right people together and keep them pointed at the right problem." />
+  <!-- Add og:image later: 1200x630 PNG matching dark theme -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <script>
+    (function() {
+      var saved = localStorage.getItem('km-theme');
+      if (saved === 'light') document.documentElement.classList.add('light');
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #020a18;
+      --bg-grad: linear-gradient(170deg, #020a18 0%, #041028 40%, #06142e 70%, #020a18 100%);
+      --surface: rgba(8,24,56,0.85);
+      --border: rgba(0,170,255,0.12);
+      --border-glow: rgba(0,170,255,0.3);
+      --text: #d0e0f0;
+      --text-bright: #e8f0ff;
+      --text-dim: #6888aa;
+      --neon: #00aaff;
+      --cyan: #00e5ff;
+      --green: #00ff88;
+      --amber: #ffaa00;
+      --red: #ff4466;
+      --purple: #aa66ff;
+      --header-bg: rgba(2,10,24,0.75);
+      --section-num-bg: rgba(0,170,255,0.08);
+      --cta-bg: #00aaff;
+      --cta-text: #020a18;
+      --cta-hover: #00e5ff;
+    }
+    html.light {
+      --bg: #f0f4fa;
+      --bg-grad: linear-gradient(170deg, #e8eef8 0%, #dde6f5 40%, #d4dff0 70%, #e8eef8 100%);
+      --surface: rgba(255,255,255,0.82);
+      --border: rgba(0,100,200,0.14);
+      --border-glow: rgba(0,100,200,0.28);
+      --text: #1a2a40;
+      --text-bright: #0a1828;
+      --text-dim: #5a7090;
+      --neon: #0070cc;
+      --cyan: #0090bb;
+      --green: #008855;
+      --amber: #cc7700;
+      --red: #cc2244;
+      --purple: #7733cc;
+      --header-bg: rgba(240,244,250,0.82);
+      --section-num-bg: rgba(0,100,200,0.07);
+      --cta-bg: #0070cc;
+      --cta-text: #ffffff;
+      --cta-hover: #005aaa;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      background-image: var(--bg-grad);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Grid overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,170,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,170,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Orbs ── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, #00aaff, transparent 70%);
+      top: -200px; right: -250px;
+      animation: orbit1 22s ease-in-out infinite alternate;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #aa66ff, transparent 70%);
+      bottom: 10%; left: -220px;
+      animation: orbit2 28s ease-in-out infinite alternate;
+    }
+    .orb-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #00ff88, transparent 70%);
+      top: 50%; right: -180px;
+      animation: orbit3 18s ease-in-out infinite alternate;
+    }
+    @keyframes orbit1 { from { transform: translate(0,0) scale(1); } to { transform: translate(-60px, 80px) scale(1.1); } }
+    @keyframes orbit2 { from { transform: translate(0,0) scale(1); } to { transform: translate(70px, -50px) scale(1.08); } }
+    @keyframes orbit3 { from { transform: translate(0,0) scale(1); } to { transform: translate(-40px, 60px) scale(0.95); } }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+    }
+    .header-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .header-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .header-name span { color: var(--neon); }
+    .header-controls { display: flex; gap: 8px; }
+    .icon-btn {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      font-size: 1rem;
+    }
+    .icon-btn:hover {
+      border-color: var(--border-glow);
+      color: var(--neon);
+      background: var(--section-num-bg);
+    }
+
+    /* ── Content wrapper ── */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.0;
+      color: var(--text-bright);
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--neon);
+    }
+    .hero-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--cyan);
+      letter-spacing: 0.06em;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
+    }
+    .hero-line {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-style: italic;
+      color: var(--text);
+      max-width: 600px;
+      line-height: 1.4;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s forwards;
+      border-left: 2px solid var(--neon);
+      padding-left: 20px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 24px rgba(0,170,255,0.25);
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+    .cta-btn:hover {
+      background: var(--cta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 36px rgba(0,170,255,0.4);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
+      margin: 20px 0;
+    }
+
+    /* ── Sections ── */
+    .sections { padding-bottom: 80px; }
+
+    .section {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .section:hover { border-color: var(--border-glow); }
+
+    .section-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      color: var(--text-bright);
+      cursor: pointer;
+      text-align: left;
+    }
+    .section-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--section-num-bg);
+      border: 1px solid var(--border-glow);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--neon);
+    }
+    .section-title {
+      flex: 1;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--text-bright);
+    }
+    .section-toggle {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: transform 0.3s, color 0.2s;
+    }
+    .section.open .section-toggle { transform: rotate(45deg); color: var(--neon); }
+
+    .section-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .section.open .section-body { max-height: 1000px; }
+
+    .section-inner {
+      padding: 0 24px 28px;
+      border-top: 1px solid var(--border);
+    }
+    .section-inner p {
+      color: var(--text);
+      margin-top: 18px;
+      font-size: 0.97rem;
+    }
+
+    /* Signature work bullets */
+    .work-list {
+      list-style: none;
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .work-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .work-dot {
+      flex-shrink: 0;
+      margin-top: 7px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--neon);
+      box-shadow: 0 0 8px var(--neon);
+    }
+    .work-list li span {
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+    .work-list li strong {
+      color: var(--text-bright);
+      font-weight: 500;
+    }
+
+    /* Tags / pills */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      background: var(--section-num-bg);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tag:hover { border-color: var(--neon); color: var(--neon); }
+
+    /* Currently section */
+    .currently-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    @media (max-width: 560px) { .currently-grid { grid-template-columns: 1fr; } }
+    .currently-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: rgba(0,170,255,0.03);
+    }
+    .currently-card .card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 6px;
+    }
+    .currently-card p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-top: 0 !important;
+    }
+
+    /* Contact */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--neon);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 0 16px rgba(0,229,255,0.15);
+      background: var(--section-num-bg);
+      text-decoration: none;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--neon); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero { padding: 70px 0 60px; }
+      .section-trigger { padding: 16px 18px; }
+      .section-inner { padding: 0 18px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-name">KM<span> /</span> Product</div>
+      <div class="header-controls">
+        <button class="icon-btn" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+          <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="icon-btn" id="collapse-toggle" title="Collapse / expand all sections" aria-label="Collapse or expand all sections">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="content">
+      <section class="hero">
+        <div class="hero-tag">Senior Product Owner</div>
+        <h1 class="hero-name">Kevin<br /><em>McCarthy</em></h1>
+        <div class="hero-role">Cork, Ireland &nbsp;·&nbsp; Product &amp; AI</div>
+        <p class="hero-line">Great products don't happen alone — I bring the right people together and keep them pointed at the right problem.</p>
+        <a href="mailto:kev.mc1990@gmail.com" class="cta-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get in touch
+        </a>
+      </section>
+
+      <div class="divider"></div>
+
+      <div class="sections" id="sections">
+
+        <!-- 1. What I Do -->
+        <div class="section open" data-section>
+          <button class="section-trigger" aria-expanded="true">
+            <span class="section-num">1</span>
+            <span class="section-title">What I Do</span>
+            <span class="section-toggle">+</span>
+          </button>
+          <div class="section-body">
+            <div class="section-inner">
+              <p>I'm a Senior Product Owner with over six years of experience across SaaS platforms, public transport technology, and enterprise software. I sit comfortably at the intersection of business, engineering, and user needs — translating ambiguity into clear backlogs, confident roadmaps, and shipped product.</p>
+              <p>My approach is grounded in outcomes over output: I care less about story points closed and more about whether the right thing got built for the right reason. I bring Agile rigour, stakeholder empathy, and a habit of asking "why" one level deeper than everyone else in the room.</p>
+              <div class="tag-cloud">
+                <span class="tag">Product Roadmapping</span>
+                <span class="tag">Backlog Management</span>
+                <span class="tag">Agile &amp; Scrum</span>
+                <span class="tag">Feature Prioritisation</span>
+                <span class="tag">Stakeholder Comms</span>
+                <span class="tag">Go-to-Market</span>
+                <span class="tag">Cross-functional Leadership</span>
+                <span class="tag">User Research</span>
+                <span class="tag">Artificial Intelligence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Work That Landed -->
+        <div class="section open" data-section>
+          <button class="section-trigger" aria-expanded="true">
+            <span class="section-num">2</span>
+            <span class="section-title">Work That Landed</span>
+            <span class="section-toggle">+</span>
+          </button>
+          <div class="section-body">
+            <div class="section-inner">
+              <ul class="work-list">
+                <li>
+                  <span class="work-dot"></span>
+                  <span>Introduced a <strong>rail transport card at Snapper Services</strong> (Wellington, NZ) that reached <strong>90%+ adoption</strong> across 14 million annual trips — designing the end-to-end experience from mobile app purchase through to seamless gate-tap.</span>
+                </li>
+                <li>
+                  <span class="work-dot"></span>
+                  <span>Led a <strong>12-month Android App Rewrite</strong> resulting in a <strong>5% crash rate reduction</strong>, feature parity with iOS, and faster issue detection and resolution for customer support teams.</span>
+                </li>
+                <li>
+                  <span class="work-dot"></span>
+                  <span>Currently at <strong>Arcadis (Dublin)</strong>, leading the migration of a bespoke enterprise SaaS solution used to plan and manage semiconductor manufacturing tools — defining vision, running scoping workshops with architects and SMEs, and owning the full Agile backlog in Azure DevOps.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. How I Work -->
+        <div class="section open" data-section>
+          <button class="section-trigger" aria-expanded="true">
+            <span class="section-num">3</span>
+            <span class="section-title">How I Work</span>
+            <span class="section-toggle">+</span>
+          </button>
+          <div class="section-body">
+            <div class="section-inner">
+              <p>Collaboration is at the centre of how I work. I believe the best product decisions come from bringing the right people into the room early — developers, designers, SMEs, customers — and creating the conditions for honest, productive conversation. I invest time in building shared understanding before a line of code is written.</p>
+              <p>Stakeholder management is something I take seriously. I keep communication clear and consistent across all levels — from daily stand-ups with a Scrum team to progress presentations for directors. I write discovery artefacts people actually read: PRDs with clear inclusion rationale, pre-mortem risk logs, and feature maps with the gaps called out. I believe a well-run discovery saves ten sprint-lengths of rework.</p>
+              <p>Before committing to a direction, I investigate. That means user interviews, gap analyses, feasibility checks, and scoping workshops — asking the right questions before proposing answers. I plan deliberately so teams can move with confidence, not just speed.</p>
+              <p>Scrum is my default operating mode — sprint planning, backlog refinement, retrospectives, reviews. I care about ceremonies that earn their time, not rituals run by rote.</p>
+              <p>Tools I'm proficient with:</p>
+              <div class="tag-cloud">
+                <span class="tag">Jira</span>
+                <span class="tag">Azure DevOps</span>
+                <span class="tag">Confluence</span>
+                <span class="tag">Miro</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Microsoft Teams</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Currently -->
+        <div class="section open" data-section>
+          <button class="section-trigger" aria-expanded="true">
+            <span class="section-num">4</span>
+            <span class="section-title">Currently</span>
+            <span class="section-toggle">+</span>
+          </button>
+          <div class="section-body">
+            <div class="section-inner">
+              <div class="currently-grid">
+                <div class="currently-card">
+                  <div class="card-label">Day job</div>
+                  <p>Senior Product Owner at <strong>Arcadis, Dublin</strong> — enterprise SaaS migration and new product feasibility within the semiconductor, construction, and pharmaceutical industries.</p>
+                </div>
+                <div class="currently-card">
+                  <div class="card-label">Studying</div>
+                  <p>PG Diploma in Science in <strong>Artificial Intelligence for Business</strong> at National College of Ireland — understanding how AI changes what good product looks like.</p>
+                </div>
+              </div>
+              <p style="margin-top:16px; font-size:0.9rem; color:var(--text-dim);">Dual Irish–American citizenship. Permanent resident of New Zealand.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Get in Touch -->
+        <div class="section open" data-section>
+          <button class="section-trigger" aria-expanded="true">
+            <span class="section-num">5</span>
+            <span class="section-title">Get in Touch</span>
+            <span class="section-toggle">+</span>
+          </button>
+          <div class="section-body">
+            <div class="section-inner">
+              <p>Open to conversations about what's next. Whether you're hiring, building something interesting, or want to talk product — I'm easy to reach.</p>
+              <div class="contact-links">
+                <a href="mailto:kev.mc1990@gmail.com" class="contact-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  kev.mc1990@gmail.com
+                </a>
+                <a href="tel:+353861571336" class="contact-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  +353 86 157 1336
+                </a>
+                <a href="https://www.linkedin.com/in/kevin-mccarthy-9527456b/" target="_blank" rel="noopener" class="contact-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Kevin McCarthy &nbsp;·&nbsp; <span id="yr"></span> &nbsp;·&nbsp; Built with the AI Badge</p>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    var html = document.documentElement;
+    var themeBtn = document.getElementById('theme-toggle');
+    var moon = document.getElementById('icon-moon');
+    var sun = document.getElementById('icon-sun');
+
+    function applyTheme(light) {
+      if (light) {
+        html.classList.add('light');
+        moon.style.display = 'none';
+        sun.style.display = '';
+      } else {
+        html.classList.remove('light');
+        moon.style.display = '';
+        sun.style.display = 'none';
+      }
+    }
+
+    applyTheme(html.classList.contains('light'));
+
+    themeBtn.addEventListener('click', function() {
+      var isLight = html.classList.contains('light');
+      applyTheme(!isLight);
+      localStorage.setItem('km-theme', !isLight ? 'light' : 'dark');
+    });
+
+    // Section collapsible
+    document.querySelectorAll('[data-section]').forEach(function(sec) {
+      var btn = sec.querySelector('.section-trigger');
+      btn.addEventListener('click', function() {
+        var open = sec.classList.contains('open');
+        sec.classList.toggle('open', !open);
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+
+    // Collapse / expand all
+    var collapseBtn = document.getElementById('collapse-toggle');
+    var allOpen = true;
+    collapseBtn.addEventListener('click', function() {
+      allOpen = !allOpen;
+      document.querySelectorAll('[data-section]').forEach(function(sec) {
+        sec.classList.toggle('open', allOpen);
+        sec.querySelector('.section-trigger').setAttribute('aria-expanded', String(allOpen));
+      });
+      collapseBtn.title = allOpen ? 'Collapse all sections' : 'Expand all sections';
+    });
+  </script>
+</body>
+</html>
